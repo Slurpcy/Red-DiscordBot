@@ -472,6 +472,7 @@ class Core(commands.commands._RuleDropper, commands.Cog, CoreLogic):
                 #embed.add_field(name=_("About this instance"), value=custom_info, inline=False)
             embed.add_field(name=_("About Zygarde"), value=about, inline=False)
             embed.add_field(name =_("Links"), value= "[Invite Zygarde](https://discord.com/api/oauth2/authorize?client_id=851187478046965800&permissions=8&scope=bot%20applications.commands) | [Support Server](https://discord.gg/9TWWRYA3A8)", inline=False)
+            embed.set_thumbnail(url= self.bot.user.avatar_url)
 
             embed.set_footer(
                 text=_("Bringing joy since 02 Jan 2016 (over {} days ago!)").format(days_since)
