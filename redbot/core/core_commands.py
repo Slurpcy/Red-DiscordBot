@@ -444,8 +444,8 @@ class Core(commands.commands._RuleDropper, commands.Cog, CoreLogic):
             red_version = "[{}]({})".format(__version__, red_pypi)
 
             about = _(
-                "Medalen is a bot inspired by many other powerful & cool bots, with the goal of easing moderation and performing tasks more efficiently than users, while being eco-friendly with others.\n\n"
-                "Medalen is a custom fork of [Red, an open source Discord bot]({}) "
+                "Zygarde is a bot inspired by many other powerful & cool bots, with the goal of easing moderation and performing tasks more efficiently than users, while being eco-friendly with others.\n\n"
+                "Zygarde is a custom fork of [Red, an open source Discord bot]({}) "
                 "created by [Twentysix]({}) and [improved by many]({}).\n\n"
                 "Red is backed by a passionate community who contributes and "
                 "creates content for everyone to enjoy. [Join us today]({}) "
@@ -458,21 +458,20 @@ class Core(commands.commands._RuleDropper, commands.Cog, CoreLogic):
                 name=_("Instance owned by team") if app_info.team else _("Instance owned by"),
                 value=str(owner),
             )
-            embed.add_field(name="Versions", value=f"<:py:859495166498439190> ``{python_version}`` \n <:dpy:859495166087790593> {dpy_version} \n <:red:859490568459255820> {red_version} ")
+            embed.add_field(name="Versions", value=f"<:py:859495166498439190> {python_version} \n <:dpy:859495166087790593> {dpy_version} \n <:red:859490568459255820> {red_version} ")
             #embed.add_field(name="discord.py", value=dpy_version)
             #embed.add_field(name=_("Red version"), value=red_version)
-            #if outdated in (True, None):
-                #if outdated is True:
-                    #outdated_value = _("Yes, {version} is available.").format(
-                        #version=str(pypi_version)
-                    #)
-                #else:
-                    #outdated_value = _("Checking for updates failed.")
-                #embed.add_field(name=_("Outdated"), value=outdated_value)
+            if outdated in (True, None):
+                if outdated is True:
+                    outdated_value = _("Yes, {version} is available.").format(
+                        version=str(pypi_version))
+                else:
+                    outdated_value = _("Checking for updates failed.")
+                embed.add_field(name=_("Outdated"), value=outdated_value)
             #if custom_info:
                 #embed.add_field(name=_("About this instance"), value=custom_info, inline=False)
-            embed.add_field(name=_("About Medalen"), value=about, inline=False)
-            embed.add_field(name =_("Links"), value= "[Invite Medalen](https://discord.com/api/oauth2/authorize?client_id=832661284067606568&permissions=8&scope=bot%20applications.commands) | [Support Server](https://discord.gg/9TWWRYA3A8)", inline=False)
+            embed.add_field(name=_("About Zygarde"), value=about, inline=False)
+            embed.add_field(name =_("Links"), value= "[Invite Zygarde](https://discord.com/api/oauth2/authorize?client_id=851187478046965800&permissions=8&scope=bot%20applications.commands) | [Support Server](https://discord.gg/9TWWRYA3A8)", inline=False)
 
             embed.set_footer(
                 text=_("Bringing joy since 02 Jan 2016 (over {} days ago!)").format(days_since)
@@ -484,8 +483,8 @@ class Core(commands.commands._RuleDropper, commands.Cog, CoreLogic):
             red_version = "{}".format(__version__)
 
             about = _(
-                "Medalen is a bot inspired by many other powerful & cool bots, with the goal of easing moderation and performing tasks more efficiently than users, while being eco-friendly with others.\n\n"
-                "Medalen is a custom fork of Red, an open source Discord bot (1) "
+                "Zygarde is a bot inspired by many other powerful & cool bots, with the goal of easing moderation and performing tasks more efficiently than users, while being eco-friendly with others.\n\n"
+                "Zygarde is a custom fork of Red, an open source Discord bot (1) "
                 "created by Twentysix (2) and improved by many (3).\n\n"
                 "Red is backed by a passionate community who contributes and "
                 "creates content for everyone to enjoy. Join us today (4) "
