@@ -465,7 +465,7 @@ class Core(commands.commands._RuleDropper, commands.Cog, CoreLogic):
                 #if outdated is True:
                     #outdated_value = _("Yes, {version} is available.").format(
                         #version=str(pypi_version)
-                    )
+                    #)
                 #else:
                     #outdated_value = _("Checking for updates failed.")
                 #embed.add_field(name=_("Outdated"), value=outdated_value)
