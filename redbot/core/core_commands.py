@@ -444,14 +444,14 @@ class Core(commands.commands._RuleDropper, commands.Cog, CoreLogic):
             red_version = "[{}]({})".format(__version__, red_pypi)
 
             about = _(
-                "Zygarde is a bot inspired by many other powerful & cool bots, with the goal of easing moderation and performing tasks more efficiently than users, while being eco-friendly with others.\n\n"
-                "Zygarde is a custom fork of [Red, an open source Discord bot]({}) "
+                f"{self.bot.user.name} is a bot inspired by many other powerful & cool bots, with the goal of easing moderation and performing tasks more efficiently than users, while being eco-friendly with others.\n\n"
+                f"{self.bot.user.name} is a custom fork of [Red, an open source Discord bot]({red_repo}) "
                 "created by [Twentysix]({}) and [improved by many]({}).\n\n"
                 "Red is backed by a passionate community who contributes and "
                 "creates content for everyone to enjoy. [Join us today]({}) "
                 "and help us improve!\n\n"
                 "(c) Cog Creators"
-            ).format(red_repo, author_repo, org_repo, support_server_url)
+            ).format(author_repo, org_repo, support_server_url)
 
             embed = discord.Embed(color=(await ctx.embed_colour()))
             embed.add_field(
@@ -468,11 +468,12 @@ class Core(commands.commands._RuleDropper, commands.Cog, CoreLogic):
                 else:
                     outdated_value = _("Checking for updates failed.")
                 embed.add_field(name=_("Outdated"), value=outdated_value)
-            #if custom_info:
-                #embed.add_field(name=_("About this instance"), value=custom_info, inline=False)
-            embed.add_field(name=_("About Zygarde"), value=about, inline=False)
+            if custom_info:
+                embed.add_field(name=_(f"About {self.bot.user.name}"), value=custom_info, inline=False)
+            embed.add_field(name=_(f"About {self.bot.user.name}"), value=about, inline=False)
             embed.add_field(name =_("Links"), value= "[Invite Zygarde](https://discord.com/api/oauth2/authorize?client_id=851187478046965800&permissions=8&scope=bot%20applications.commands) | [Support Server](https://discord.gg/9TWWRYA3A8)", inline=False)
             embed.set_thumbnail(url= self.bot.user.avatar_url)
+            embed.set_thumbnail(url = self.bot.user.avatar_url)
 
             embed.set_footer(
                 text=_("Bringing joy since 02 Jan 2016 (over {} days ago!)").format(days_since)
@@ -484,8 +485,8 @@ class Core(commands.commands._RuleDropper, commands.Cog, CoreLogic):
             red_version = "{}".format(__version__)
 
             about = _(
-                "Zygarde is a bot inspired by many other powerful & cool bots, with the goal of easing moderation and performing tasks more efficiently than users, while being eco-friendly with others.\n\n"
-                "Zygarde is a custom fork of Red, an open source Discord bot (1) "
+                f"{self.bot.user.name} is a bot inspired by many other powerful & cool bots, with the goal of easing moderation and performing tasks more efficiently than users, while being eco-friendly with others.\n\n"
+                f"{self.bot.user.name} is a custom fork of Red, an open source Discord bot (1) "
                 "created by Twentysix (2) and improved by many (3).\n\n"
                 "Red is backed by a passionate community who contributes and "
                 "creates content for everyone to enjoy. Join us today (4) "
